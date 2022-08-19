@@ -107,5 +107,55 @@ body {
     flex-direction: column;
     background-color: var(--color-box);
     overflow: auto;
-    margin-bottom: var(--spaces-bottom);
+    border-radius: 10px;
+    margin: var(--spaces-bottom) 0;
+    height: 300px;
+    padding: 15px;
+    width: 100%;
+    flex-grow: 1;
+    gap: 10px;
+
+}
+
+.country-data-row {
+    width: 100%;
+    display: flex;
+    gap: var(--spaces);
+    align-items: center;
+
+}
+
+.country-data-row-precentage {
+    content: "";
+    width: 1000px;
+    height: 7px;
+    border-radius: 5px;
+    background: linear-gradient(to right, rgb(229, 255, 0), rgb(255, 0, 162));
+}
+
+.country-data-row-value {
+    width: 100px;
+    flex-shrink: 0;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.country-data-row-name {
+    width: 200px;
+    flex-shrink: 0;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+/* Chart */
+.chart-container {
+    flex-shrink: 0;
+    width: 100%;
+    display: flex;
+    align-items: stretch;
+    background: var(--color-box);
+    border-radius: 10px;
+    padding: 10px;
+    gap: var(--spaces);
+    height: 300px;
 }
