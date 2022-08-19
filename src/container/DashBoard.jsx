@@ -1,7 +1,7 @@
 import StatusTime from '../components/StatusTime';
 import StatusBox from '../components/StatusBox';
 import DataCountry from '../components/DataCountry';
-// import Chart from '../components/Chart';
+import Chart from '../components/Chart';
 import { useEffect, useState } from "react";
 import axios from 'axios';
 const DashBoard = () => {
@@ -52,7 +52,7 @@ const DashBoard = () => {
                 {/* {<DataCountry name={'viet nam'} value={'đá'} precentage={100} />} */}
             </div>
             <div className="chart-container">
-                {/* <Chart /> */}
+                <Chart />
             </div>
         </>
     );

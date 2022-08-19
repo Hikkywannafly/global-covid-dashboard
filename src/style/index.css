@@ -151,11 +151,11 @@ body {
     flex-shrink: 0;
     width: 100%;
     display: flex;
+    height: auto;
     align-items: stretch;
     background: var(--color-box);
     border-radius: 10px;
     padding: 10px;
     gap: var(--spaces);
-    height: 300px;
-
+    flex-direction: column;
 }

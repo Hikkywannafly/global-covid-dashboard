@@ -1,5 +1,5 @@
 import DashBoard from './container/DashBoard';
-import './style/index.css'
+
 function App() {
   return (
     <div className="page-container">
