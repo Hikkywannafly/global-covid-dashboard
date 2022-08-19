@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --spaces: 15px;
+    --color-box: rgb(39, 29, 52);
+    --spaces-bottom: 20px;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(153, 154, 252);
+}
+
+#root {
+    padding: 2%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+* {
+    white-space: nowrap;
+    letter-spacing: 0.15rem;
+    font-family: 'Fira Sans', sans-serif;
+    color: #fff;
+}
+
+body {
+    background-color: #151328;
+    scroll-behavior: smooth;
+    text-rendering: optimizeSpeed;
+    font-size: 1.6rem;
+    line-height: 1;
+
+}
+
+.page-title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+/* Status Time */
+.status-time-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spaces-bottom);
+    padding: 0 var(--spaces);
+}
+
+.status-time-content {
+    display: flex;
+    gap: 5px;
+}
+
+.info-own a {
+    margin: 5px;
+}
+
+/* Status Box */
+.status-box-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 1fr;
+    gap: var(--spaces);
+    margin-bottom: var(--spaces-bottom);
+}
+
+.status-box {
+    background-color: var(--color-box);
+    display: inline-block;
+    padding: 10px 10px 5px 10px;
+    border-radius: 15px;
+}
+
+.status-box-title {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-weight: 600;
+    margin-bottom: 14px;
+}
+
+.status-box-value {
+    font-size: 30px;
+}
+
+/* Data Country */
+.contries-container {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-box);
+    overflow: auto;
+    margin-bottom: var(--spaces-bottom);
+}
