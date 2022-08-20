@@ -26,14 +26,14 @@ const Chart = (props) => {
         <>
             <div className="chart-box">
                 <div className='label-chart' > <h4 style={{ color: color }}>{name}</h4></div>
-                <div style={{ width: '100%', height: '300px' }}>
+                <div style={{ width: '100%', height: '350px' }}>
 
                     <ResponsiveContainer>
                         <AreaChart
                             data={dataSets}
                             margin={{
                                 top: 10,
-                                right: 30,
+                                right: 0,
                                 left: 0,
                                 bottom: 0,
                             }}

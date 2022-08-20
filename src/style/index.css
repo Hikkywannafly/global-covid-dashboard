@@ -175,3 +175,90 @@ body {
     color: rgb(161, 244, 161);
     color: transparent;
 }
+
+@media (max-width: 1200px) {
+    :root {
+        --spaces: 10px;
+    }
+
+    .status-box-grid {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .status-box-title {
+        font-size: 20px;
+    }
+
+    .status-box-value {
+        font-size: 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    :root {
+        --spaces: 5px;
+    }
+
+    .page-container {
+        margin-top: 15px
+    }
+
+    .page-title {
+        font-size: 10px;
+    }
+
+    .info-own a {
+        margin: 2px;
+        font-size: 12px;
+
+    }
+
+    .status-time-content {
+        display: block;
+        gap: 0;
+    }
+
+    .status-box-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        gap: 10px;
+    }
+
+    .status-box-title {
+        font-size: 15px;
+    }
+
+    .status-box-value {
+        font-size: 20px;
+    }
+
+    .country-data-row-name {
+        width: 150px;
+        font-size: 12px;
+        letter-spacing: 0.1rem;
+    }
+
+    .country-data-row-value {
+        font-size: 12px;
+    }
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: #323536;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #bcc0c4;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #a9adb0;
+}
