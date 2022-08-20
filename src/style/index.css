@@ -157,5 +157,21 @@ body {
     border-radius: 10px;
     padding: 10px;
     gap: var(--spaces);
+    justify-content: space-between;
     flex-direction: column;
+}
+
+.label-chart {
+    display: flex;
+    flex-direction: column;
+    font-size: 15px;
+    font-weight: 600;
+    margin: 10px;
+    align-items: center;
+}
+
+.chart-box {
+    margin-bottom: 10px;
+    color: rgb(161, 244, 161);
+    color: transparent;
 }

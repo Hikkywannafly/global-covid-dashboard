@@ -8,26 +8,42 @@ const DashBoard = () => {
     const [loading, setLoading] = useState(true);
     const [status, setStatus] = useState([]);
     const [countries, setCountries] = useState([]);
-    const [timeline, setTimeline] = useState([]);
+    const [timeLine, setTimeline] = useState([]);
 
     useEffect(() => {
+        const fetchDataWorld = async () => {
+            const data = await axios.get('https://api.covid19api.com/world');
+            console.log(data);
+            return data;
+        }
+        fetchDataWorld()
+            .then(res => res.data)
+            .then(data => {
+                console.log(data)
+                setTimeline(data.sort((a, b) => new Date(a.Date) - new Date(b.Date)));
+
+            })
+            .catch(err => console.error(err));
+        setLoading(false);
+
+
         const fetchDataSummary = async () => {
             const data = await axios.get('https://api.covid19api.com/summary')
+
             return data;
         };
+
+
         fetchDataSummary()
             .then(res => res.data)
             .then(data => {
-                console.log(data.Global);
+                // console.log(data.Global);
                 setStatus(data.Global);
                 setCountries(data.Countries.sort((a, b) => b.TotalConfirmed - a.TotalConfirmed));
             })
             .catch(err => console.error(err));
-        const fetchDataWorld = async () => await axios.get('https://api.covid19api.com/world');
-        fetchDataWorld()
-            .then(res => console.log(res.data))
-            .catch(err => console.error(err));
-        setLoading(false);
+
+
     }, []);
     return (
         <>
@@ -51,8 +67,26 @@ const DashBoard = () => {
 
                 {/* {<DataCountry name={'viet nam'} value={'đá'} precentage={100} />} */}
             </div>
+
             <div className="chart-container">
-                <Chart />
+                <Chart color={'rgb(145, 207, 255)'} name={'Total Covid'}
+                    // data={{
+                    //     name: timeLine.filter((e) => e.Date.map(e => e.Date)),
+                    //     uv: (timeLine.filter((e) => e.TotalConfirmed.map(e => e.TotalConfirmed)))
+                    // }}
+                    // data={timeLine.filter((e) => e.TotalConfirmed.map((e) => e.TotalConfirmed))}
+                    data={timeLine.filter((e) => e.TotalConfirmed).map((e) => e.TotalConfirmed)}
+                    labels={timeLine.filter((e) => e.TotalConfirmed).map((e) => e.Date)}
+                // label={timeLine.filter((e) => e.Date.map(e => e.Date))}
+                />
+                <Chart color={'rgb(255, 251, 145)'} name={'New Case Covid'}
+                    data={timeLine.filter((e) => e.NewConfirmed).map((e) => e.NewConfirmed)}
+                    labels={timeLine.filter((e) => e.NewConfirmed).map((e) => e.Date)}
+                />
+                <Chart color={'rgb(251, 119, 119)'} name={'New death Covid'}
+                    data={timeLine.filter((e) => e.NewDeaths).map((e) => e.NewDeaths)}
+                    labels={timeLine.filter((e) => e.NewDeaths).map((e) => e.Date)}
+                />
             </div>
         </>
     );
